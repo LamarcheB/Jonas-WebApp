@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 24px;
+  color: #343a40;
+
+  display: grid;
+  grid-template-columns: 80px 400px 1fr 250px;
+  grid-template-rows: 80px 1fr;
+  height: 100vh;
+
+  text-align: center; /* Centers text */
+  font-weight: bold;
+}
+
+nav,
+section,
+main,
+aside {
+  padding: 24px;
+}
+
+/***************************/
+/*****  Main sections  *****/
+/***************************/
+nav {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  background-color: #343a40;
+  color: white;
+}
+
+menu {
+  grid-column: 2 / -1;
+  background-color: #7048e8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 0 40px; /* match menu and section padding to keep aligned*/
+}
+
+section {
+  grid-column: 2;
+  grid-row: 2;
+  background-color: #e9ecef;
+  padding: 20 40px; /* match menu and section padding to keep aligned*/
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  overflow: scroll;
+}
+
+main {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+aside {
+  grid-column: 4;
+  grid-row: 2;
+  background-color: #e9ecef;
+}
+
+/************************/
+/*****  Components  *****/
+/************************/
+button {
+  border: none;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #5f3dc4;
+  cursor: pointer;
+
+  display: inline-block;
+  padding: 8px 12px;
+}
+
+button:last-child {
+  background-color: red;
+  /* NOTE: Auto will fill up all the remaining space (similar to 1fr taking up all available space) */
+  margin-left: auto;
+}
+
+section div {
+  background-color: #adb5bd;
+  height: 95px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
